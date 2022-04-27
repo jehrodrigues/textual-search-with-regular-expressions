@@ -33,17 +33,20 @@ class DatasetReader:
                 # search term
                 search_term = lines.pop()
 
+                # check if the search term has only one word
+                assert len(search_term.split()) == 1
+
                 # convert into a dataframe
                 df_search = pd.DataFrame(lines, columns=['text'])
 
                 # pre-process the dataset
                 df_search['text'] = df_search.text.apply(lambda x: TextPreprocessing(x).extract_words())
 
-            except pd.errors.EmptyDataError:
-                logging.error(f'is empty or has the wrong format and has been skipped. {self._search_file_name}')
+            except Exception:
+                logging.error(f'is empty or has the wrong format and has been skipped: {self._search_file_name}')
             finally:
                 reader.close()
         else:
-            logging.error(f'directory or file does not exist {path}')
+            logging.error(f'directory or file does not exist: {path}')
 
         return df_search, search_term
