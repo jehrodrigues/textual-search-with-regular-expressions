@@ -4,3 +4,5 @@
 
 # local package
 pandas>=1.1.1
+jupyter>=1.0.0
+ipython>=8.2.0

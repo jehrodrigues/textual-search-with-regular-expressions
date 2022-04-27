@@ -7,6 +7,7 @@
 ### Contents
 
 * [Installation](#installation)
+* [Running](#running)
 * [Experimentation](#experimentation)
 
 ---
@@ -18,7 +19,7 @@ $ source venv/bin/activate
 $ pip install -r requirements.txt
 ```
 
-## Experimentation
+## Running
 in order to perform the textual search
 
 ```console
@@ -28,3 +29,12 @@ $ python -m search <search_file_name>
 The parameter is a file (e.g. source.txt) containing the **source text** and the **search term**. The file must be inside the **./data/** directory and the extension must be .txt:
 * **Source text**: lines of strings, with each line containing three words embedded in symbols, numbers and spaces
 * **Search term**: always on the last line of the file, and contains a single word.
+
+
+## Experimentation
+in order to perform the textual search in an interactive way (real time)
+
+```console
+$ cd notebooks/
+$ jupyter notebook
+```

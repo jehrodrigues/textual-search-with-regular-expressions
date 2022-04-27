@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import logging
 import argparse
+import utils
 from src.features.textual_search import TextualSearch
 from src.data.read_dataset import DatasetReader
 
@@ -28,4 +29,4 @@ if __name__ == '__main__':
 
     # Output
     logging.info(f'output: ')
-    [print("[" + ' '.join(out) + "]") for out in output_search]
+    print(utils.format_output(output_search))
