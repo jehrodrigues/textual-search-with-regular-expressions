@@ -1,6 +1,6 @@
 # Textual Search
 
-**Task goal**: Search a term in a specific term in a textual dataset.
+**Task goal**: Search a specific term in a textual dataset.
 
 ---
 
