@@ -12,7 +12,7 @@ if __name__ == '__main__':
 
     parser.add_argument('search_file_name',
                         # nargs='*',
-                        help='{file1.txt, file2.txt} choose the txt file.')
+                        help='{file1.txt, file2.txt} choose the .txt file.')
 
     log_fmt = '%(asctime)s - %(name)s - %(levelname)s - %(message)s'
     logging.basicConfig(level=logging.INFO, format=log_fmt)

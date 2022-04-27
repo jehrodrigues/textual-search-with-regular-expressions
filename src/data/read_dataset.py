@@ -24,7 +24,7 @@ class DatasetReader:
         logging.info(f'processing: {path}')
         df_search = pd.DataFrame
         search_term = ""
-        if path.exists():
+        if path.exists() and path.name.endswith('.txt'):
             reader = open(path)
             try:
                 # read the file
@@ -43,10 +43,10 @@ class DatasetReader:
                 df_search['text'] = df_search.text.apply(lambda x: TextPreprocessing(x).extract_words())
 
             except Exception:
-                logging.error(f'is empty or has the wrong format and has been skipped: {self._search_file_name}')
+                logging.error(f'the file is empty or has a wrong format and has been skipped: {self._search_file_name}')
             finally:
                 reader.close()
         else:
-            logging.error(f'directory or file does not exist: {path}')
+            logging.error(f'directory or file is invalid or does not exist: {path}')
 
         return df_search, search_term
